@@ -1,0 +1,22 @@
+.chat-popup {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  background-color: "black";
+  width: 20%;
+  height: 40%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+button {
+}
+.footer-header {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+.chat-send {
+}
+.chat-header .right {
+  background-color: red;
+}
