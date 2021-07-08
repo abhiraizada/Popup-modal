@@ -35,7 +35,11 @@
   align-items: center;
   flex-direction: column;
 }
-
+.msg-area {
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
 .close-button {
   position: absolute;
   right: 0;
