@@ -104,7 +104,7 @@ const TestInstructionsModal = (props) => {
             </Row>
           </Container>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button onClick={props.onHide}>Close</Button>
+            <Button onClick={() => setModalShow(false)}>Close</Button>
           </div>
         </Modal.Body>
       </Modal>
