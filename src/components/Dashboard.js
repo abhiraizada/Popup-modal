@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Home from "../components/Home";
 import ChatPopup from "../components/ChatPopup";
-import ChatModal from "../components/ChatModel";
+import ChatModal from "../components/ChatModal";
 import Popup from "../components/Popup";
 import Test from "../components/Test";
 
@@ -33,6 +33,12 @@ const Dashboard = () => {
           //   setModel={() => setModel}
         />
       )}
+      <ChatModal
+        messages={msg}
+        setShowChatModal={setShowChatModal}
+        //   showModel={showModel}
+        //   setModel={() => setModel}
+      />
     </div>
   );
 };

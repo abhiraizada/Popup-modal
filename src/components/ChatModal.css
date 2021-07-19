@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.my-modal {
+  width: 50vw;
+  /* background-color: darkblue; */
+  /* max-width: 60vw; */
+  /* height: 300px; */
+}
+.msg-container {
+  box-sizing: border-box;
+  /* border: 2px solid black; */
+  padding: 10px;
+  max-height: 200px;
+  display: flex;
+  width: 66%;
+
+  /* overflow-y: scroll; */
+}
+.msg {
+  padding: 0;
+  margin: 0;
+}
+.msg-area {
+  max-height: 400px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff8765;
+  color: white;
+}
+.user-name {
+  text-align: center;
+}
+.user-status {
+  text-align: center;
+  font-size: small;
+}
+.msg-details {
+  /* border: 1px solid grey; */
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font: normal normal normal 13px/19px Poppins;
+  letter-spacing: 0px;
+  color: #333333;
+  opacity: 1;
+  border-radius: 20px 20px 20px 0px;
+  background: #f5f3f3 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.right-side {
+  margin: 1rem 1rem 1rem auto;
+}
+.right {
+  /* display: flex; */
+  /* flex-direction: column; */
+  justify-content: flex-end;
+  background: #fdecea 0% 0% no-repeat padding-box;
+  border: 1px solid #00000000;
+  border-radius: 20px 20px 0px 20px;
+  opacity: 1;
+}
+.user-details {
+  display: flex;
+  flex-grow: 20;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.time-right {
+  text-align: right;
+  margin: 0;
+  font: normal normal normal 11px/15px Poppins;
+  color: #787272;
+}
+.time-left {
+  text-align: left;
+  margin: 0;
+  font: normal normal normal 11px/15px Poppins;
+  color: #787272;
+}
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-right: 10px;
+  position: relative;
+}
+.avatar-right {
+  margin-left: 10px;
+}
+.avatar img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.avatar-img {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.chat-footer {
+  background: #f5f3f3 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+}
+
+input {
+  flex-grow: 2;
+  padding: 0 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+button {
+  border: none;
+  outline: none;
+}
+.emoji-btn {
+  padding-left: 10px;
+  background-color: transparent;
+}
+.sendMsgBtn {
+  padding: 0 15px;
+  background-color: transparent;
+}
+.paper-plane {
+  outline: none;
+  background-color: transparent;
+}
+.close-button {
+  position: absolute;
+  color: white;
+  padding-left: 10px;
+}

@@ -1,53 +1,20 @@
 import React from "react";
-import Logo from "./jacket.jpg";
+// import emptyChair from "../../assets/images/empty-chair.png";
+// import partialBody from "../../assets/images/partial-body.png";
+// import otherWindow from "../../assets/images/using-away-window.png";
+// import otherDevice from "../../assets/images/using-other-device.png";
 import "./TestInstructionsModal.css";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+
 import { Modal, Container, Row, Col } from "react-bootstrap";
 const TestInstructionsModal = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <div class="instruction-container">
-      <Button variant="danger">rAIZADa</Button>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
+        Test Instructions
       </Button>
-      {/* <div class="inst-box">
-        <img></img>
-        <p className="instruction-details">loprem shod sadnfl sdf lsjdf</p>
-      </div>
-      <div class="inst-box">
-        <img></img>
-        <p className="instruction-details">loprem shod sadnfl sdf lsjdf</p>
-      </div>
-      <div class="inst-box">
-        <img></img>
-        <p className="instruction-details">loprem shod sadnfl sdf lsjdf</p>
-      </div>
-      <div class="inst-box">
-        <img></img>
-        <p className="instruction-details">loprem shod sadnfl sdf lsjdf</p>
-      </div>
-      <div class="modal-container" id="modal-opened">
-        <div class="modal">
-          <div class="modal__details">
-            <h1 class="modal__title">Modal Title</h1>
-            <p class="modal__description">
-              Sentence that will tell user what this modal is for or something.
-            </p>
-          </div>
 
-          <p class="modal__text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex
-            dicta maiores libero minus obcaecati iste optio, eius labore
-            repellendus.
-          </p>
-
-          <button class="modal__btn">Button &rarr;</button>
-
-          <a href="#modal-closed" class="link-2"></a>
-        </div> */}
-      {/* </div> */}
       <div className="card-container"></div>
 
       <Modal
@@ -57,6 +24,9 @@ const TestInstructionsModal = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
+        <button class="btn close-button" onClick={() => setModalShow(false)}>
+          X
+        </button>
         <Modal.Body>
           <h3>IMPORTANT! you are being monitored!</h3>
           <Container>
@@ -64,20 +34,19 @@ const TestInstructionsModal = (props) => {
               <Col>
                 <div style={{ display: "flex" }}>
                   <div className="card-image">
-                    <img alt=""></img>
+                    <img alt="empty chair"></img>
                   </div>
                   <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Surveillance detects no face, please readjust your webcam.
                   </p>
                 </div>
               </Col>
               <Col>
                 <div style={{ display: "flex" }}>
-                  <img></img>
+                  <img alt="partial body"></img>
                   <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Surveillance detects partial face/ face mismatch/ multiple
+                    faces. Please readjust your webcam.
                   </p>
                 </div>
               </Col>
@@ -85,26 +54,26 @@ const TestInstructionsModal = (props) => {
             <Row>
               <Col>
                 <div style={{ display: "flex" }}>
-                  <img></img>
+                  <img alt="other window"></img>
                   <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Surveillance detects you have navigated away from test
+                    window 5 times.
                   </p>
                 </div>
               </Col>
               <Col>
                 <div style={{ display: "flex" }}>
-                  <img></img>
+                  <img alt="aother device"></img>
                   <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Surveillance detects student is using an object to answer
+                    questions.
                   </p>
                 </div>
               </Col>
             </Row>
           </Container>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button onClick={() => setModalShow(false)}>Close</Button>
+            <Button onClick={() => setModalShow(false)}>Got it</Button>
           </div>
         </Modal.Body>
       </Modal>

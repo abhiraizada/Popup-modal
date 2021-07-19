@@ -1,24 +1,64 @@
 import React, { useState } from "react";
 import { Modal, Container, Button } from "react-bootstrap";
-const ChatModal2 = (props) => {
+import smile from "../assets/smile.svg";
+const ChatModal2 = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleSend = () => {};
   const handleEmoji = () => {};
+  const [inputValue, setInputValue] = useState("");
+  const onChangeHandler = (e) => {
+    setInputValue(e.target.value);
+    console.log(inputValue);
+  };
   //   const [modalShow, setModalShow] = React.useState(false);
-  const messages = [
-    "hello Sir!!",
-    "hello Janet!",
-    "Can i take test tomorrow",
-    "Yes you can",
-  ];
+  const messages = ["hello Sir!!", "hello Janet!"];
+  const props = {
+    messageData: [
+      { teacher_message: "I am teacher", time: "9:31 PM" },
+      { teacher_message: "i am ", time: "9:47 PM" },
+      { student_message: "i am done", time: "5:11 PM" },
+      {
+        user_type: "teacher",
+        user_id: 10660629,
+        status: 1,
+        message: "i am BIG teacher",
+        time: "6:29 PM",
+      },
+      {
+        user_type: "student",
+        user_id: 10660629,
+        status: 1,
+        message: "i am student",
+        time: "6:29 PM",
+      },
+    ],
+  };
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
         Launch static backdrop modal
       </Button>
+      <div>
+        Jill McCabe Johnson | Slate | June 16, 2021 | 2,422 words “It is not a
+        normal thing to do—to acknowledge to yourself that you may have slept
+        with a serial killer.” 2. Beijing Calling: Suspicion, Hope, and
+        Resistance in the Chinese Rock Underground Stacey Anderson | Rolling
+        Stone | June 24, 2021 | 7,800 “China has produced some of the most vital
+        indie rock on the planet. But can the scene survive gentrification,
+        government crackdowns, and a hit TV show?” 3. Living Memory Megan Pillow
+        | Guernica Magazine | June 23, 2021 | 5,158 words “Who, then, are the
+        chroniclers of Black lives in the pandemic?” 4. And Then There Were
+        Twelve Barry Blanchard | Alpinist Magazine | December 19, 2020 | 4,600
+        words “Climbing culture: we come to each other’s aid in times of need.
+        Ethan and Lorne knew they had to stay and help. The four men hunkered
+        down inside the schrund-cave. With each cup of tea they brewed, their
+        spirits rose. They would make it through the night.” 5. First Passage
+        Elizabeth Rush | Orion Magazine | June 3, 2021 | 4,556 words “A journey
+        toward motherhood in the age of glacial loss.”
+      </div>
       {/* <Button variant="primary" onClick={() => setModalShow(true)}>
         Launch vertically centered modal
       </Button>
@@ -30,7 +70,7 @@ const ChatModal2 = (props) => {
       <div>
         <Modal
           {...props}
-          style={{ position: "relative" }}
+          // style={{ position: "relative" }}
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           show={show}
@@ -58,27 +98,60 @@ const ChatModal2 = (props) => {
 
               <Modal.Body>
                 <div class="msg-area">
-                  {messages.map((msg, i) =>
-                    i % 2 ? (
+                  {props.messageData.map((data) =>
+                    data.user_type != undefined ? (
+                      data.user_type === "teacher" ? (
+                        <div className="msg-container darker right">
+                          <img src="" alt="Avatar"></img>
+                          <p class="msg">{data.message}</p>
+                          <span class="time-right">{data.time}</span>
+                        </div>
+                      ) : (
+                        <div className="msg-container left">
+                          <img src="" alt="Avatar"></img>
+                          <p class="msg">{data.message}</p>
+                          <span class="time-left">{data.time}</span>
+                        </div>
+                      )
+                    ) : data.teacher_message ? (
                       <div className="msg-container darker right">
                         <img src="" alt="Avatar"></img>
-                        <p class="msg">{msg}</p>
-                        <span class="time-right">11:00</span>
+                        <p class="msg">{data.teacher_message}</p>
+                        <span class="time-right">{data.time}</span>
                       </div>
                     ) : (
                       <div className="msg-container left">
                         <img src="" alt="Avatar"></img>
-                        <p class="msg">{msg}</p>
-                        <span class="time-left">11:01</span>
+                        <p class="msg">{data.student_message}</p>
+                        <span class="time-left">{data.time}</span>
                       </div>
                     )
                   )}
+                  {/* // {props.messageData.map((data) =>
+                  //   data.teacher_message ? (
+                  //     <div className="msg-container darker right">
+                  //       <img src="" alt="Avatar"></img>
+                  //       <p class="msg">{data.teacher_message}</p>
+                  //       <span class="time-right">{data.time}</span>
+                  //     </div>
+                  //   ) : (
+                  //     <div className="msg-container left">
+                  //       <img src="" alt="Avatar"></img>
+                  //       <p class="msg">{data.teacher_message}</p>
+                  //       <span class="time-left">{data.time}</span>
+                  //     </div>
+                  //   )
+                  // )} */}
                 </div>
                 <div class="chat-footer">
                   <form id="chat-form">
-                    <input type="text" placeholder="Type your message" />
+                    <input
+                      type="text"
+                      placeholder="Type your message"
+                      onChange={(e) => onChangeHandler(e)}
+                    />
                     <button onClick={() => handleEmoji()}>
-                      <i class="emoji-btn">emoji</i>
+                      <img src={smile} alt="smile"></img>
                     </button>
 
                     <button onClick={() => handleSend()}>
