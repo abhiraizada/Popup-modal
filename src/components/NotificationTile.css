@@ -1,0 +1,27 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.notifi-accordian {
+  margin: 5px;
+}
+
+.notifi-card {
+  margin: 5px;
+}
+
+.notifi-time {
+  text-align: left;
+}
+.card-title {
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+.card-text {
+  text-align: left;
+}
+.card-body {
+  text-align: left;
+}

@@ -4,7 +4,13 @@ import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import Resize from "./components/Resize";
 import TestInstructionsModal from "./components/TestInstructionsModal";
 import ChatModal2 from "./components/ChatModal2";
+import NotificationBox from "./components/NotificationBox";
 import Cm from "./components/Cm";
+import Shashank from "./components/Shashank";
+// import "font-awesome/css/font-awesome.min.css";
+// import "assets/fonts/font-awesome.min.css";
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const messageData = [
     { teacher_message: "Hello", time: "6:28 PM" },
@@ -21,6 +27,8 @@ function App() {
 
         <Route path="/modal" component={ChatModal2} exact />
         <Route path="/modal2" component={Cm} props={messageData} exact />
+        <Route path="/not" component={NotificationBox} exact />
+        <Route path="/sh" component={Shashank} exact />
       </Switch>
     </div>
   );

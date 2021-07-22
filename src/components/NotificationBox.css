@@ -1,0 +1,16 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+video {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* .notifi-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

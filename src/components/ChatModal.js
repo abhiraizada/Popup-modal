@@ -61,9 +61,7 @@ const ChatModal = (props) => {
   };
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal ss
-      </Button>
+      <Button onClick={handleShow}>Launch static backdrop modal ss</Button>
 
       <div>
         <Modal
