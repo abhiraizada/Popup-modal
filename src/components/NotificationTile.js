@@ -20,7 +20,6 @@ const NotificationTile = ({ data }) => {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut
                 </Accordion.Toggle>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
               </Card.Header>
               <Accordion.Collapse eventKey="0">
                 <Card.Body>

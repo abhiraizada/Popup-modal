@@ -14,3 +14,7 @@ video {
   justify-content: center;
   align-items: center;
 } */
+
+.no-alert {
+  margin: 5px;
+}
