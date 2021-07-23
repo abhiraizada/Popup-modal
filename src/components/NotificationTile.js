@@ -1,24 +1,39 @@
 import { useHistory } from "react-router-dom";
 
-import React from "react";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
 import "./NotificationTile.css";
 const NotificationTile = ({ data }) => {
   const history = useHistory();
+  const [eventKey, setEventKey] = useState(true);
   return (
     <div>
       {/* <button onClick={() => history.goBack()}>Go Back</button> */}
       {data.dynamic ? (
         <div className="notifi-accordian">
-          <Accordion defaultActiveKey="0">
+          <Accordion defaultActiveKey="1">
             <Card>
               <Card.Header>
-                <Accordion.Toggle eventKey="0">
+                <Accordion.Toggle
+                  className="accordian-toggle"
+                  eventKey="0"
+                  onClick={() => {
+                    eventKey ? setEventKey(false) : setEventKey(true);
+                  }}
+                >
+                  {console.log("eventKey", eventKey)}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut
+                  <span className="toggle">
+                    <i
+                      className={`fa ${
+                        eventKey ? "fa-chevron-down" : "fa-chevron-up"
+                      }`}
+                    />
+                  </span>
                 </Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey="0">

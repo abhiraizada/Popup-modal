@@ -25,3 +25,9 @@
 .card-body {
   text-align: left;
 }
+.card-header {
+  background-color: transparent;
+}
+.accordian-toggle {
+  background-color: transparent;
+}

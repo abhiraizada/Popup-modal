@@ -33,7 +33,7 @@ const NotificationBox = () => {
       dynamic: "img",
     },
   ];
-  let count = 0;
+  let count = 1;
   // notificationData._embedded.notifications
 
   return (
