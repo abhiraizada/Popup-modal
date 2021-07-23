@@ -7,6 +7,7 @@ import ChatModal2 from "./components/ChatModal2";
 import NotificationBox from "./components/NotificationBox";
 import Cm from "./components/Cm";
 import Shashank from "./components/Shashank";
+import Settings from "./components/Settings";
 // import "font-awesome/css/font-awesome.min.css";
 // import "assets/fonts/font-awesome.min.css";
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/modal2" component={Cm} props={messageData} exact />
         <Route path="/not" component={NotificationBox} exact />
         <Route path="/sh" component={Shashank} exact />
+        <Route path="/setting" component={Settings} exact />
       </Switch>
     </div>
   );
