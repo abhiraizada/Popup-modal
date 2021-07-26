@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import Share from "./Share";
 import "./Settings.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 const Settings = () => {
   const [isChecked, setIsChecked] = useState(false);
   const handleOnChange = () => {
     setIsChecked(!isChecked);
   };
+  const [shareModalShow, setShareModalShow] = useState(false);
   return (
     <div>
-      <h1>Settings</h1>
+      {/* <h1>Settings</h1>
       <Container>
         <Col>
           <Row>
@@ -42,7 +45,14 @@ const Settings = () => {
             </div>
           </Row>
         </Col>
-      </Container>
+      </Container> */}
+
+      <Button variant="primary" onClick={() => setShareModalShow(true)}>
+        share
+      </Button>
+
+      <Share show={shareModalShow} onHide={() => setShareModalShow(false)} />
+      <Share />
     </div>
   );
 };

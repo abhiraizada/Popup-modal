@@ -1,0 +1,15 @@
+.sharepopup .modal-header .close {
+  position: absolute;
+  right: -25px;
+  top: -10px;
+  color: #fff;
+  font-weight: 200;
+}
+
+.sharepopup .modal-header {
+  padding: 0;
+}
+.sharepopup .modal-dialog {
+  width: 88%;
+  text-align: center;
+}
