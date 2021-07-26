@@ -48,11 +48,11 @@ const Settings = () => {
       </Container> */}
 
       <Button variant="primary" onClick={() => setShareModalShow(true)}>
-        share
+        sharenlsbdf
       </Button>
 
       <Share show={shareModalShow} onHide={() => setShareModalShow(false)} />
-      <Share />
+      {/* <Share /> */}
     </div>
   );
 };
