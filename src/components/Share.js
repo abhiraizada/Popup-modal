@@ -15,16 +15,15 @@ import "./Share.css";
 const Share = (props) => {
   const shareUrl =
     "https://www.extramarks.com/testprep/share-question/MTgzMzUzMS82NzM1Nzgvd2Vic2l0ZS8yMDI5MTUzMQ==";
-  const [text, setText] = useState(shareUrl);
+  // const [text, setText] = useState(shareUrl);
 
-  const inputHandler = (event) => {
-    setText(event.target.value);
-  };
-
+  // const inputHandler = (event) => {
+  //   setText(event.target.value);
+  // };
+  const [copyClicked, setCopyClicked] = useState(false);
   const copy = async () => {
-    await navigator.clipboard.writeText(text);
-    alert("Text copied: ", text);
-    console.log(text);
+    await navigator.clipboard.writeText(shareUrl);
+    setCopyClicked(true);
   };
 
   return (
@@ -67,21 +66,18 @@ const Share = (props) => {
 
           <InputGroup className="mb-1 mt-3" size="sm">
             <FormControl
-              value={text}
-              onChange={(e) => inputHandler(e)}
+              value={shareUrl}
+              disabled
               placeholder=""
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
             />
 
-            <InputGroup.Text onClick={() => copy()} id="basic-addon2">
-              Copy
+            <InputGroup.Text id="inputGroup-sizing-sm" onClick={() => copy()}>
+              {!copyClicked ? "Copy" : "Copied!"}
             </InputGroup.Text>
           </InputGroup>
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
       </Modal>
     </div>
   );
