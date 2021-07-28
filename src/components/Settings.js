@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Share from "./Share";
 import "./Settings.css";
-import { Container, Row, Col } from "react-bootstrap";
+// import { Container, Row, Col } from "react-bootstrap";
 import { Button, Modal } from "react-bootstrap";
+import ResumePractise from "./ResumePractise";
 const Settings = () => {
   const [isChecked, setIsChecked] = useState(false);
   const handleOnChange = () => {
     setIsChecked(!isChecked);
   };
   const [shareModalShow, setShareModalShow] = useState(false);
+  const [copyClicked, setCopyClicked] = useState(false);
   return (
     <div>
       {/* <h1>Settings</h1>
@@ -51,7 +53,17 @@ const Settings = () => {
         sharenlsbdf
       </Button>
 
-      <Share show={shareModalShow} onHide={() => setShareModalShow(false)} />
+      <Share
+        show={shareModalShow}
+        setCopyClicked={setCopyClicked}
+        copyClicked={copyClicked}
+        onHide={() => {
+          setShareModalShow(false);
+          setCopyClicked(false);
+          console.log("runnign onHide fxn");
+        }}
+      />
+      <ResumePractise />
       {/* <Share /> */}
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -20,12 +20,16 @@ const Share = (props) => {
   // const inputHandler = (event) => {
   //   setText(event.target.value);
   // };
-  const [copyClicked, setCopyClicked] = useState(false);
+
   const copy = async () => {
     await navigator.clipboard.writeText(shareUrl);
-    setCopyClicked(true);
+    props.setCopyClicked(true);
   };
 
+  // useEffect(() => {
+  //   console.log("runn");
+  //   return () => setCopyClicked(false);
+  // }, []);
   return (
     <div>
       <Modal
@@ -72,9 +76,9 @@ const Share = (props) => {
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
             />
-
+            {console.log("hnji :", props.copyClicked)}
             <InputGroup.Text id="inputGroup-sizing-sm" onClick={() => copy()}>
-              {!copyClicked ? "Copy" : "Copied!"}
+              {!props.copyClicked ? "Copy" : "Copied!"}
             </InputGroup.Text>
           </InputGroup>
         </Modal.Body>
