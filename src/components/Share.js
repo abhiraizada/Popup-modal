@@ -68,7 +68,7 @@ const Share = (props) => {
             Copy To Clipboard
           </button> */}
 
-          <InputGroup className="mb-1 mt-3" size="sm">
+          <InputGroup className="mb-1 mt-3">
             <FormControl
               value={shareUrl}
               disabled
@@ -77,9 +77,12 @@ const Share = (props) => {
               aria-describedby="inputGroup-sizing-sm"
             />
             {console.log("hnji :", props.copyClicked)}
-            <InputGroup.Text id="inputGroup-sizing-sm" onClick={() => copy()}>
+            {/* <InputGroup.Text id="inputGroup-sizing-sm" onClick={() => copy()}>
               {!props.copyClicked ? "Copy" : "Copied!"}
-            </InputGroup.Text>
+            </InputGroup.Text> */}
+            <Button onClick={() => copy()}>
+              {!props.copyClicked ? "Copy" : "Copied!"}
+            </Button>
           </InputGroup>
         </Modal.Body>
       </Modal>
