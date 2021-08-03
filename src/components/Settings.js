@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Share from "./Share";
+
 import "./Settings.css";
 // import { Container, Row, Col } from "react-bootstrap";
 import { Button, Modal } from "react-bootstrap";
 import ResumePractise from "./ResumePractise";
+import PrevYrQuesBanner from "./PrevYrQuesBanner";
 const Settings = () => {
   const [isChecked, setIsChecked] = useState(false);
   const handleOnChange = () => {
@@ -65,6 +67,7 @@ const Settings = () => {
       />
       <ResumePractise />
       {/* <Share /> */}
+      <PrevYrQuesBanner />
     </div>
   );
 };
