@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ToggleButton from "react-bootstrap/ToggleButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import Button from "react-bootstrap/Button";
+import OrderIdCourseDetails from "./OrderIdCourseDetails";
 
 import "./AccountWeb.css";
+import OrderInfo from "./OrderInfo";
 
 const AccountWeb = (props) => {
   const [isChecked, setIsChecked] = useState(false);
-  const [showAccountDetails, setAccountDetails] = useState(false);
+  const [showAccountDetails, setAccountDetails] = useState(true);
   const [showParentDetails, setParentDetails] = useState(false);
   const [showOrderDetails, setOrderDetails] = useState(false);
 
@@ -64,6 +64,12 @@ const AccountWeb = (props) => {
           </div>
         </div>
       </div>
+      <div>
+        {showAccountDetails}
+        {showParentDetails}
+        {showOrderDetails}
+      </div>
+      <OrderInfo />
     </div>
   );
 };
