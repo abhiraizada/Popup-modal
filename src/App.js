@@ -9,6 +9,7 @@ import Cm from "./components/Cm";
 import Shashank from "./components/Shashank";
 import Settings from "./components/Settings";
 import AccountPageTabs from "./components/AccountPageTabs";
+import AccountWeb from "./components/AccountWeb";
 // import "font-awesome/css/font-awesome.min.css";
 // import "assets/fonts/font-awesome.min.css";
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/sh" component={Shashank} exact />
         <Route path="/setting" component={Settings} exact />
         <Route path="/acc" component={AccountPageTabs} exact />
+        <Route path="/acc2" component={AccountWeb} exact />
       </Switch>
     </div>
   );

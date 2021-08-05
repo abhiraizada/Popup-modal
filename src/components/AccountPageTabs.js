@@ -8,6 +8,27 @@ import "./AccountPageTabs.css";
 
 const AccountPageTabs = (props) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [showAccountDetails, setAccountDetails] = useState(false);
+  const [showParentDetails, setParentDetails] = useState(false);
+  const [showOrderDetails, setOrderDetails] = useState(false);
+
+  const onClickAccountDetails = () => {
+    setParentDetails(false);
+    setOrderDetails(false);
+    setAccountDetails(true);
+  };
+
+  const onClickParentDetails = () => {
+    setAccountDetails(false);
+    setOrderDetails(false);
+    setParentDetails(true);
+  };
+
+  const onClickOrderDetails = () => {
+    setParentDetails(false);
+    setAccountDetails(false);
+    setOrderDetails(true);
+  };
 
   const handleOnChange = () => {
     setIsChecked(!isChecked);
@@ -17,8 +38,11 @@ const AccountPageTabs = (props) => {
     <div>
       <div className="d-flex " style={{ justifyContent: "space-between" }}>
         <ButtonGroup className="me-2 ml-2" aria-label="First group">
-          <Button>Account Details</Button> <Button>Parent Details</Button>
-          <Button>Order Details</Button>
+          <Button onClick={() => onClickAccountDetails()}>
+            Account Details
+          </Button>{" "}
+          <Button onClick={() => onClickParentDetails()}>Parent Details</Button>
+          <Button onClick={() => onClickOrderDetails()}>Order Details</Button>
         </ButtonGroup>
 
         {/* <div className="d-flex">
