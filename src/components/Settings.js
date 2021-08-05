@@ -6,6 +6,7 @@ import "./Settings.css";
 import { Button, Modal } from "react-bootstrap";
 import ResumePractise from "./ResumePractise";
 import PrevYrQuesBanner from "./PrevYrQuesBanner";
+import Shashank from "./Shashank";
 const Settings = () => {
   const [isChecked, setIsChecked] = useState(false);
   const handleOnChange = () => {
@@ -13,6 +14,10 @@ const Settings = () => {
   };
   const [shareModalShow, setShareModalShow] = useState(false);
   const [copyClicked, setCopyClicked] = useState(false);
+  let flag = "n";
+  if (flag === "y") {
+    return <div>Testing helllllalal</div>;
+  }
   return (
     <div>
       {/* <h1>Settings</h1>
@@ -68,6 +73,7 @@ const Settings = () => {
       <ResumePractise />
       {/* <Share /> */}
       <PrevYrQuesBanner />
+      <Shashank video="hi" />
     </div>
   );
 };
